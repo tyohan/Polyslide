@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Component</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="bower_components/webcomponentsjs/webcomponents.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+  <link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+  <link href="bower_components/core-animated-pages/transitions/slide-from-right.html" rel="import">
+  <link rel="import" href="bower_components/core-a11y-keys/core-a11y-keys.html">
+</head>
+<body unresolved fullbleed>
+<template is="auto-binding">
+  <core-a11y-keys id="a11y" keys="left pagedown down right pageup up" on-keys-pressed="{{navigate}}"></core-a11y-keys>
+</template>
+<core-animated-pages transitions="slide-from-right">
+    <section>
+      <div layout horizontal class="bgwhite">
+      		<div layout horizontal center>
+      			 <img src="images/p-logo.svg" class="img-responsive" style="margin:1em;">
+	        </div>
+      		<div layout horizontal center>
+            <div layout vertical>
+		        <h1 class="title">Title goes here</h1>
+		        <h2 class="subtitle">Presenter</h2>
+		        <h3 class="subtitle">@twitter</h3>
+	        </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bggrey">
+      	<h1>Some Title</h1>
+        <ul class="smalltext">
+        	<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </li>
+        	<li>Aliquam tincidunt mauris eu risus.</li>
+        	<li>Vestibulum auctor dapibus neque.</li>
+        	<li>Nunc dignissim risus id metus.</li>
+        	<li>Cras ornare tristique elit.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bgred">
+        <h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.</h1>
+      </div>
+    </section>
+    <section>
+      <div layout horizontal center center-justified class="bggreen">
+        <h1>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</h1>
+      </div>
+    </section>
+    <section>
+      <div layout horizontal center center-justified class="bgpurple">
+        <h1>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</h1>
+      </div>
+    </section>
+    <section>
+      <div layout horizontal  center-justified end style="background-image:url(images/bgsample.jpg);background-size:cover;">
+        <h1>Toraja, South Sulawesi, Indonesia</h1>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bgblue">
+        <ul>
+        	<li>Aliquam tincidunt mauris eu risus.</li>
+          <li>Vestibulum auctor dapibus neque.</li>
+          <li>Nunc dignissim risus id metus.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bgpurple">
+        <h1>Aliquam tincidunt</h1>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bgpurple">
+        <ul>
+        	<li><img src="images/icon-polymer.png"> Polymer by Google</li>
+        	<li><img src="images/icon-xtags.png"> X-Tag by Mozilla</li>
+        	<li><img src="images/icon-bosonic.png"> Bosonic</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bgwhite">
+      	<img src="images/p-logo.svg" class="img-responsive" width="300px">
+        <h1>Polymer Project</h1>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bggrey">
+        <ol>
+        	<li>Web components</li>
+        	<li>The Polymer library</li>
+        	<li>The Core and Paper element sets</li>
+        </ol>
+      </div>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bgwhite">
+      	<img src="images/designer_fadeout.png" class="img-responsive">
+        <h1>Polymer Designer</h1>
+    </section>
+    <section>
+      <div layout vertical center center-justified class="bggrey">
+        <h1 class="title">Thanks</h1>
+        <h3 class="subtitle">http://gplus.to/tyohan</h3>
+        <h3 class="subtitle">@tyohan</h3>
+      </div>
+    </section>
+  </core-animated-pages>
+ <script src="js/main.js"></script>
+</body>
+</html>
