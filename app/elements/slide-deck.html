@@ -1,0 +1,75 @@
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/animations/slide-from-right-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/slide-from-left-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/slide-left-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/slide-right-animation.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../bower_components/iron-a11y-keys/iron-a11y-keys.html">
+<dom-module id="slide-deck">
+	<template>
+		<iron-a11y-keys target="{{target}}" keys="up down left right" on-keys-pressed="navigate"></iron-a11y-keys>
+		<neon-animated-pages selected="0" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+		      <neon-animatable class="bggde">
+		            <h1 class="title">Polyslide</h1>
+		            <h2 class="subtitle">Yohan Totting</h2>
+		            <div class="subtitle">GDE Chrome:HTML5</div>
+		      </neon-animatable>
+		      <neon-animatable class="bggde">
+								<h1 class="title">Demo of Polyslide deck</h1>
+		      </neon-animatable>
+
+		</neon-animated-pages>
+	</template>
+</dom-module>
+<script>
+	(function () {
+      Polymer({
+			is:"slide-deck",
+			properties:{
+				target:{
+					type: Object,
+			        value: function() {
+			          return document.body;
+			        }
+				}
+			},
+			_target:function(){
+				    return document.body;
+				  },
+			attached: function() {
+			    var p = document.querySelector('neon-animated-pages');
+				  var selected=window.location.hash.replace('#','');
+				  if(selected.length>0){
+				  	p.select(selected);
+
+				  	this.setPage(p.selected);
+				  }
+
+			  },
+			navigate:function(ev){
+			  	var p = document.querySelector('neon-animated-pages');
+
+			    if(ev.detail.key==='right' || ev.detail.key==='pageup' || ev.detail.key==='up'){
+							p.entryAnimation="slide-from-right-animation";
+							p.exitAnimation="slide-left-animation";
+			        p.selectNext();
+			        this.setPage(p.selected);
+			    }
+			     else{
+								p.entryAnimation="slide-from-left-animation";
+                p.exitAnimation="slide-right-animation";
+				        p.selectPrevious();
+				        this.setPage(p.selected);
+
+			     }
+			 },
+			setPage:function (page){
+			    window.location=window.location.protocol+'//'+window.location.host+window.location.pathname+'#'+page;
+			  }
+
+
+		});
+	 })();
+
+</script>

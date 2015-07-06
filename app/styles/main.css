@@ -1,0 +1,142 @@
+/*
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+*/
+
+
+body{
+	background: #fafafa;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+	font-size: 56px;
+	text-align: center;
+}
+
+h1,h2,h3,h4,h5{
+	font-weight: 500;
+	font-size: 1.3em;
+}
+neon-animated-pages{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+neon-animatable{
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+neon-animatable>*{
+
+}
+
+.subtitle{
+	color: #666;
+	font-weight: 200;
+}
+.light .title{
+	color: #333;
+}
+
+.light .subtitle{
+	color: #999;
+}
+
+neon-animatable.bggde{
+	background: #F0F0F0 url(../images/gde-color.png) 95% 95% no-repeat;
+}
+
+neon-animatable>div.bgwhite{
+	color: #333;
+}
+
+neon-animatable>div.bgpurple{
+	background-color: #9C27B0;
+}
+
+neon-animatable>div.bgred{
+	background-color: #F44336;
+}
+neon-animatable>div.bgblue{
+	background-color: #2196F3;
+}
+neon-animatable>div.bgdarkblue{
+	background-color: #3F51B5;
+}
+neon-animatable>div.bggreen{
+	background-color: #4CAF50;
+}
+neon-animatable>div.bggrey{
+	background-color: #607D8B;
+}
+neon-animatable>div.bgcode{
+	background-color: #fafafa;
+	color: #333;
+}
+neon-animatable>div.bgcode img{
+	border-radius: 1px solid #CCC;
+}
+
+.col{
+	padding: 10px;
+}
+
+iframe{
+	border:1px solid #CCC;
+}
+
+@media screen
+  and (min-device-width: 1024px){
+		neon-animatable *{
+		  	font-size: 48px;
+		}
+
+		prettify-element{
+		  	font-size: 14px;
+		}
+
+		.small-text{
+			font-size: 0.6em;
+		}
+
+		.title{
+			font-size: 0.9em;
+			line-height: 1.5em;
+		}
+		.subtitle{
+			font-size: 0.7em;
+		}
+
+}
+
+@media screen
+  and (min-device-width: 600px)
+	and (max-device-width: 800px){
+		neon-animatable *{
+		  	font-size: 32px;
+		}
+
+		prettify-element{
+		  	font-size: 11px;
+		}
+
+		.small-text{
+			font-size: 0.5em;
+		}
+
+		.title{
+			font-size: 0.7em;
+			line-height: 1.2em;
+		}
+		.subtitle{
+			font-size: 0.6em;
+		}
+}
